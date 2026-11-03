@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1e293b;
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+
+    .register-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #334155;
+      font-size: 0.95rem;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    button {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+    }
+
+    @media (max-width: 640px) {
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="register-form" action="#" method="post">
+      <h2>Student Registration</h2>
+
+      <div class="row">
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="studentId">Student ID</label>
+          <input type="text" id="studentId" name="studentId" placeholder="e.g. STU-2025-001" required />
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter contact number" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="course">Course</label>
+          <select id="course" name="course" required>
+            <option value="">Select a course</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Business Administration">Business Administration</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Psychology">Psychology</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Choose gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create a password" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" placeholder="Enter your home address" required></textarea>
+      </div>
+
+      <button type="submit">Register Now</button>
+    </form>
+  </div>
+</body>
+</html>
